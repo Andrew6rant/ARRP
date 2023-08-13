@@ -59,7 +59,7 @@ publishing {
         }
     }
 }
-
+/*
 unifiedPublishing {
     project {
         gameVersions = [minecraft_version]
@@ -83,4 +83,4 @@ unifiedPublishing {
             }
         }
     }
-}
+}*/
