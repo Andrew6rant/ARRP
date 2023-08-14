@@ -36,6 +36,9 @@ public interface SidedRRPCallback {
 	 * If you want to override a vanilla resource but allow resource packs and mods to override it
 	 */
 	Event<SidedRRPCallback> BETWEEN_VANILLA_AND_MODS = EventFactory.createArrayBacked(SidedRRPCallback.class, CALLBACK_FUNCTION);
+	Event<SidedRRPCallback> BETWEEN_MODS_AND_USER = EventFactory.createArrayBacked(SidedRRPCallback.class, CALLBACK_FUNCTION);
+
+
 
 	/**
 	 * Register your resource pack at a lower priority than minecraft and mod resources. This is actually done by
@@ -54,6 +57,7 @@ public interface SidedRRPCallback {
 	static Void INIT_ = Util.make(() -> {
 		BEFORE_VANILLA.register((type, resources) -> RRPCallback.BEFORE_VANILLA.invoker().insert(resources));
 		BETWEEN_VANILLA_AND_MODS.register((type, resources) -> RRPCallback.BETWEEN_VANILLA_AND_MODS.invoker().insert(resources));
+		BETWEEN_MODS_AND_USER.register((type, resources) -> RRPCallback.BETWEEN_MODS_AND_USER.invoker().insert(resources));
 		AFTER_VANILLA.register((type, resources) -> RRPCallback.AFTER_VANILLA.invoker().insert(resources));
 		return null;
 	});

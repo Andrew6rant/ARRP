@@ -25,6 +25,9 @@ public interface RRPCallback {
 
 	Event<RRPCallback>BETWEEN_VANILLA_AND_MODS = EventFactory.createArrayBacked(RRPCallback.class, CALLBACK_FUNCTION);
 
+	Event<RRPCallback> BETWEEN_MODS_AND_USER = EventFactory.createArrayBacked(RRPCallback.class, CALLBACK_FUNCTION);
+
+
 	/**
 	 * Register your resource pack at a higher priority than minecraft and mod resources, but lower priority than user resources.
 	 */
